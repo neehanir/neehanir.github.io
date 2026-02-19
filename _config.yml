@@ -1,0 +1,27 @@
+title: Neeharika Aniruddh
+description: "Intermodal Expressive Artist, Educator and Facilitator | Animal Lover | Advocate | BA | CATEP"
+url: "https://www.neeharika.art"
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+# Build settings
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Collections for navigation
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

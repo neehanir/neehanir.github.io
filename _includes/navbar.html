@@ -1,0 +1,39 @@
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">Neeharika Aniruddh</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+      <!-- About (dropdown) -->
+      <li class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-expanded="false">About</button>
+        <ul class="dropdown-menu">
+          <li><a href="{{ '/artist-statement/' | relative_url }}" class="dropdown-link">Artist Statement</a></li>
+          <li><a href="{{ '/disclaimers/' | relative_url }}" class="dropdown-link">Disclaimers</a></li>
+        </ul>
+      </li>
+
+      <!-- Collaboration (dropdown) -->
+      <li class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-expanded="false">Collaboration</button>
+        <ul class="dropdown-menu">
+          <li><a href="{{ '/expressive-arts-facilitation/' | relative_url }}" class="dropdown-link">Expressive Arts Facilitation</a></li>
+          <li><a href="{{ '/artistic-collaboration/' | relative_url }}" class="dropdown-link">Artistic Collaboration</a></li>
+        </ul>
+      </li>
+
+      <!-- Gallery -->
+      <li class="nav-item">
+        <a href="{{ '/gallery/' | relative_url }}" class="nav-link">Gallery</a>
+      </li>
+
+      <!-- Support -->
+      <li class="nav-item">
+        <a href="{{ '/support/' | relative_url }}" class="nav-link">Support My Work</a>
+      </li>
+    </ul>
+  </div>
+</nav>
