@@ -6,7 +6,7 @@ page_subtitle: Expressive Arts Education and Facilitation Services
 permalink: /expressive-arts-facilitation/
 ---
 
-![Expressive Arts Facilitation](/img/recital.jpg){: .page-hero-image}
+![Expressive Arts Facilitation](/img/recital.JPG){: .page-hero-image}
 
 As a multifaceted educator and creative facilitator, I am dedicated to fostering personal growth, healing, and connection through the power of the arts. With over nine years of teaching experience, training in Music Therapy, a BA in Music, and a variety of experiences in dance, visual art, writing, drama, and nature-based practices, I have evolved my practice from traditional music instruction into a holistic, intermodal expressive arts approach. My work focuses on providing a safe, co-creative space where you can explore your inner world and find your unique creative voice for healing and growth.
 

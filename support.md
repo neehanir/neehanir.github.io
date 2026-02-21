@@ -5,6 +5,6 @@ page_title: Support My Work
 permalink: /support/
 ---
 
-![Support My Work](/img/sari.jpg){: .page-hero-image}
+![Support My Work](/img/sari.JPG){: .page-hero-image}
 
 *Details coming soon. Thank you for your interest in supporting Neeharika's work!*
