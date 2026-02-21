@@ -24,6 +24,6 @@ Neeharika is currently actively expanding her artistic portfolio. Alongside this
 
 ![Brutey and Kwee](/img/brutey_and_kwee.jpg)
 
-![Brutey and Bhabie](/img/brutey_and_bhabie.jpg)
+![Brutey and Bhabie](/img/brutey_and_bahbie.jpg)
 
 </div>
