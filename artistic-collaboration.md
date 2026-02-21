@@ -6,6 +6,8 @@ page_subtitle: Building Worlds Through Shared Creativity
 permalink: /artistic-collaboration/
 ---
 
+![Artistic Collaboration](/img/graffiti.jpg){: .page-hero-image}
+
 I believe art is a conversation, and I am open to artistic collaboration with creators who are passionate about pushing the boundaries of expression and narrative.
 
 If you are a fellow artist or visionary looking to merge perspectives, these are the primary areas where I find common ground, though my door remains open to other creative avenues that spark a unique connection:

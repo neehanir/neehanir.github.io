@@ -17,3 +17,13 @@ With a BA in Music and training in music therapy, Neeharika's musical foundation
 Neeharika's dedication to well-being extends beyond the human experience. As a Certified Animal Training and Enrichment Professional (CATEP), she is a passionate advocate for animal rights and mental health support for animal lovers.
 
 Neeharika is currently actively expanding her artistic portfolio. Alongside this creative output, she is refining her expressive arts facilitation techniques and deepening her research in Ethnomusicology. Her research interests focus on exploring sociocultural identity through music and the arts, focusing on driving questions such as *"what does music mean to the people who create and live with it?"* Driven by a commitment to lifelong learning and service, she aims to pursue an MSW and seeks to expand her training in expressive arts, with the long-term vision of doctoral research in Ethnomusicology.
+
+<div class="page-images" markdown="1">
+
+![Brutey and Yoyo](/img/brutey_and_yoyo.jpg)
+
+![Brutey and Kwee](/img/brutey_and_kwee.jpg)
+
+![Brutey and Bhabie](/img/brutey_and_bhabie.jpg)
+
+</div>
