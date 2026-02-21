@@ -8,6 +8,8 @@ permalink: /artist-statement/
 
 ## Neeharika Aniruddh
 
+![Artistic Collaboration](/img/nilla.jpg){: .page-hero-image}
+
 Neeharika Aniruddh is an Intermodal Expressive Artist, Educator, and Facilitator whose work lives at the intersection of creative expression and advocacy. Her practice is deeply rooted in her lived experience as a womxn of color navigating the complexities of chronic illness, neurodivergence, and cross-cultural identity.
 
 Neeharika uses a multi-modal approach, weaving together musical storytelling with digital and physical arts, movement, and nature-based practices, to build worlds that explore the complexities of the human condition, focusing on topics such as disenfranchised grief, post traumatic stress, interpersonal relationships, companionship with animals, nostalgia, and the passage of time. Integrating her lived experience and training with a compassionate approach, Neeharika examines her own internal landscape and outward journey, and prompts a collective reflection on our shared human experience and the way we engage with the world.
@@ -25,5 +27,8 @@ Neeharika is currently actively expanding her artistic portfolio. Alongside this
 ![Brutey and Kwee](/img/brutey_and_kwee.jpg)
 
 ![Brutey and Bhabie](/img/brutey_and_bahbie.jpg)
+
+![Chickens](/img/chickens.png)
+
 
 </div>
