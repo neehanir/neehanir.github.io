@@ -55,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ---------- Light / dark switch ----------
+  const themeSwitch = document.getElementById('theme-switch');
+  if (themeSwitch) {
+    setupThemeSwitch(themeSwitch);
+  }
+
   // ---------- Gallery ----------
   const galleryGrid = document.getElementById('gallery');
   if (galleryGrid) {
@@ -67,6 +73,48 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLightbox(lightbox);
   }
 });
+
+// ==========================================================================
+// Light / dark switch — sets color-scheme on <html>; the palette in main.css
+// uses light-dark(), so the browser does the rest. With no saved choice the
+// site follows the visitor's system setting.
+// ==========================================================================
+function setupThemeSwitch(toggle) {
+  const root = document.documentElement;
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const storageKey = 'neeharika-color-scheme';
+
+  function isDark() {
+    const chosen = root.style.colorScheme;
+    return chosen ? chosen === 'dark' : systemDark.matches;
+  }
+
+  function syncSwitch() {
+    toggle.setAttribute('aria-checked', isDark());
+  }
+
+  toggle.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+
+    root.classList.add('theme-fading');
+    root.style.colorScheme = next;
+    syncSwitch();
+    setTimeout(() => root.classList.remove('theme-fading'), 500);
+
+    try {
+      // Matching the system again? Forget the choice so future system changes apply
+      if ((next === 'dark') === systemDark.matches) {
+        localStorage.removeItem(storageKey);
+        root.style.colorScheme = '';
+      } else {
+        localStorage.setItem(storageKey, next);
+      }
+    } catch (e) {}
+  });
+
+  systemDark.addEventListener('change', syncSwitch);
+  syncSwitch();
+}
 
 // ==========================================================================
 // Gallery Loader — loads images listed in a data file or scans /img/ folder

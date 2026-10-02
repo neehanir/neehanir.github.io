@@ -16,6 +16,12 @@
   --color-accent-light:#d4a98a;
   --color-border:    #e0d6cc;
   --color-white:     #ffffff;
+  --color-nav-bg:    rgba(250, 248, 245, 0.95);
+  --color-shadow:    rgba(0, 0, 0, 0.08);
+
+  /* Follow the visitor's system setting until they flip the switch,
+     which sets color-scheme on <html> directly (see default.html) */
+  color-scheme: light dark;
 
   /* Typography */
   --font-serif:   'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -32,6 +38,27 @@
   /* Layout */
   --container-width: 820px;
   --nav-height: 72px;
+}
+
+/* ---------- Dark palette: candlelit umber ----------
+   Each colour carries both its light and dark value; the browser picks one
+   from the active color-scheme. Browsers without light-dark() keep the
+   light palette above. */
+@supports (color: light-dark(#000, #fff)) {
+  :root {
+    --color-bg:          light-dark(#faf8f5, #1d1815);
+    --color-bg-alt:      light-dark(#f3efe9, #262019);
+    --color-text:        light-dark(#3a3330, #e6dbd1);
+    --color-text-light:  light-dark(#6b5e57, #b7a698);
+    --color-heading:     light-dark(#2c2421, #f4ebe2);
+    --color-accent:      light-dark(#b0785a, #dda383);
+    --color-accent-dark: light-dark(#8f5e44, #efc2a6);
+    --color-accent-light:light-dark(#d4a98a, #9a6a50);
+    --color-border:      light-dark(#e0d6cc, #3b3029);
+    --color-white:       light-dark(#ffffff, #2b231e);
+    --color-nav-bg:      light-dark(rgba(250, 248, 245, 0.95), rgba(29, 24, 21, 0.92));
+    --color-shadow:      light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.45));
+  }
 }
 
 /* ---------- Reset & Base ---------- */
@@ -57,6 +84,17 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Soft fade between themes, only while the switch is being flipped */
+html.theme-fading,
+html.theme-fading body,
+html.theme-fading .navbar,
+html.theme-fading .hero,
+html.theme-fading .site-footer,
+html.theme-fading .dropdown-menu,
+html.theme-fading .nav-menu {
+  transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease;
 }
 
 /* ---------- Typography ---------- */
@@ -129,7 +167,7 @@ blockquote {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: rgba(250, 248, 245, 0.95);
+  background: var(--color-nav-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
@@ -149,9 +187,11 @@ blockquote {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 1rem;
 }
 
 .nav-brand {
+  margin-right: auto;
   font-family: var(--font-serif);
   font-size: 1.4rem;
   font-weight: 600;
@@ -227,7 +267,7 @@ blockquote {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px var(--color-shadow);
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
@@ -303,6 +343,67 @@ blockquote {
 .nav-toggle.active .hamburger::after {
   top: 0;
   transform: rotate(-45deg);
+}
+
+/* ---------- Theme switch (sun / moon slider) ---------- */
+.theme-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 54px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.theme-switch-icon {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  color: var(--color-text-light);
+  pointer-events: none;
+}
+
+.theme-switch-icon.sun  { left: 7px; }
+.theme-switch-icon.moon { right: 7px; }
+
+.theme-switch-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 1px 4px var(--color-shadow);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch[aria-checked="true"] .theme-switch-knob {
+  transform: translateX(26px);
+}
+
+/* Without light-dark() the palette can't change, so don't offer the switch */
+@supports not (color: light-dark(#000, #fff)) {
+  .theme-switch { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch-knob,
+  html.theme-fading,
+  html.theme-fading * {
+    transition: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -562,6 +663,7 @@ blockquote {
 
   .nav-toggle {
     display: block;
+    order: 1; /* keep the hamburger at the far right, after the theme switch */
   }
 
   .nav-menu {
@@ -575,7 +677,7 @@ blockquote {
     align-items: flex-start;
     padding: calc(var(--nav-height) + 1rem) var(--space-md) var(--space-md);
     gap: 0;
-    box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -4px 0 30px var(--color-shadow);
     transition: right 0.35s ease;
     overflow-y: auto;
   }
