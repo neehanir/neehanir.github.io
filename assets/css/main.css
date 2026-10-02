@@ -637,6 +637,58 @@ blockquote {
   border-bottom-color: var(--color-accent-dark);
 }
 
+/* ---------- Social Button ---------- */
+.social-links {
+  text-align: center;
+  margin: calc(var(--space-sm) * -1) 0 var(--space-lg);
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.social-handle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  margin-left: 0.2rem;
+}
+
+.social-button:hover,
+.social-button:focus-visible {
+  color: var(--color-bg);
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-shadow);
+}
+
+.social-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -787,5 +839,14 @@ blockquote {
 
   .page-images img {
     width: 100%;
+  }
+
+  /* Keep the Instagram button on one line */
+  .social-button {
+    white-space: nowrap;
+  }
+
+  .social-handle {
+    display: none;
   }
 }
